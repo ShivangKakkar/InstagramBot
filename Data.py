@@ -8,7 +8,7 @@ Hey {}
 
 Welcome to {}
 
-I can download public profile pictures, videos, images and reels from instagram along with caption.
+I can download profile pictures, videos, images and reels from instagram along with post caption.
 Use below buttons to learn more.
 
 By @StarkBots
