@@ -32,6 +32,10 @@ async def main(_, msg):
             await msg.reply("No Such Instagram Post Exists.")
             return
         if len(photos+videos) == 1:
+            if caption:
+                caption += "\n\nBy @StarkBots"
+            else:
+                caption = "By @StarkBots"
             if photos:
                 for photo in photos:
                     await msg.reply_photo(photo, caption)
