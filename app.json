@@ -51,6 +51,16 @@
       "description": "Add username/id of a channel/group",
       "required": false,
       "value": ""
+    },
+    "INSTA_USERNAME": {
+      "description": "Get this value from my.telegram.org.",
+      "required": true,
+      "value": ""
+    },
+    "INSTA_PASSWORD": {
+      "description": "Get this value from my.telegram.org.",
+      "required": true,
+      "value": ""
     }
   }
 }

@@ -1,7 +1,8 @@
 import os
 import re
-from pyrogram import Client, filters
 import shutil
+from Config import INSTA_USERNAME, INSTA_PASSWORD
+from pyrogram import Client, filters
 
 
 @Client.on_message(filters.private & ~filters.command(["start", "help", "profile_pic", "about", "dp", "stats"]))
@@ -10,7 +11,10 @@ async def _instaloader(_, msg):
     try:
         matches = pattern.search(msg.text)
         post_id = matches.group(4)
-        command = "instaloader --no-metadata-json -- -" + post_id
+        if INSTA_USERNAME and INSTA_PASSWORD:
+            command = f"instaloader --no-metadata-json -l {INSTA_USERNAME} -p {INSTA_PASSWORD} -- -{post_id}"
+        else:
+            command = f"instaloader --no-metadata-json -- -{post_id}"
         os.system(command)
         path = f"-{post_id}"
         photos, videos, caption = post_prep(path)

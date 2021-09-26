@@ -15,6 +15,8 @@ if ENVIRONMENT:
     MUST_JOIN = os.environ.get('MUST_JOIN', None)
     if MUST_JOIN.startswith("@"):
         MUST_JOIN = MUST_JOIN.replace("@", "")
+    INSTA_USERNAME = os.environ.get('INSTA_USERNAME', None)
+    INSTA_PASSWORD = os.environ.get('INSTA_PASSWORD', None)
 else:
     # Fill the Values
     API_ID = 0
@@ -25,3 +27,5 @@ else:
     MUST_JOIN = ""
     if MUST_JOIN.startswith("@"):
         MUST_JOIN = MUST_JOIN[1:]
+    INSTA_USERNAME = ""
+    INSTA_PASSWORD = ""
