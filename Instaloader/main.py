@@ -1,12 +1,14 @@
 import os
 import re
+import asyncio
 import shutil
 from Config import INSTA_USERNAME, INSTA_PASSWORD
 from pyrogram import Client, filters
 
 
 @Client.on_message(filters.private & ~filters.command(["start", "help", "profile_pic", "about", "dp", "stats"]))
-async def _instaloader(_, msg):
+async def main(_, msg):
+    status = await msg.reply('Please Wait...', quote=True)
     pattern = re.compile(r'^(https?:[/][/])?(www\.)?instagram.com[/](p|reel)[/]([A-Za-z0-9-_]+)')
     try:
         matches = pattern.search(msg.text)
@@ -15,10 +17,18 @@ async def _instaloader(_, msg):
             command = f"instaloader --no-metadata-json -l {INSTA_USERNAME} -p {INSTA_PASSWORD} -- -{post_id}"
         else:
             command = f"instaloader --no-metadata-json -- -{post_id}"
-        os.system(command)
+        proc = await asyncio.subprocess.create_subprocess_shell(
+            command,
+            stdout=asyncio.subprocess.PIPE,
+            stderr=asyncio.subprocess.PIPE
+        )
+        stdout, stderr = await proc.communicate()
+        if "wrong password" in str(stderr).lower():
+            raise Exception('Wrong Instagram Password.')
         path = f"-{post_id}"
         photos, videos, caption = post_prep(path)
         if not photos and not videos:
+            await status.delete()
             await msg.reply("No Such Instagram Post Exists.")
             return
         if len(photos+videos) == 1:
@@ -36,9 +46,11 @@ async def _instaloader(_, msg):
                 for video in videos:
                     await msg.reply_video(video)
             if caption:
-                await msg.reply(f"**POST CAPTION : **\n\n{caption}")
+                await msg.reply(f"**POST CAPTION : **\n\n{caption} \n\nBy @StarkBots")
+        await status.delete()
         shutil.rmtree(path)
     except AttributeError:
+        await status.delete()
         await msg.reply(error)
 
 
