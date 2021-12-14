@@ -9,7 +9,8 @@ from instaloader.exceptions import QueryReturnedNotFoundException, ProfileNotExi
 async def dp(_, msg):
     status = await msg.reply('Please Wait...', quote=True)
     if len(msg.command) == 1:
-        await msg.reply("Please do not use empty command. Below is the right format to get a profile pic. \n\n`/profile_pic instagram-username` \n\nExample : `/profile_pic taaarannn`")
+        await msg.reply("Please do not use empty command. Below is the right format to get a profile pic. "
+                        "\n\n`/profile_pic instagram-username` \n\nExample : `/profile_pic taaarannn`")
         return
     elif len(msg.command) > 2:
         await msg.reply("Use 1 username at a time.")
@@ -23,7 +24,7 @@ async def dp(_, msg):
         await status.delete()
         await msg.reply("No Such Instagram Account Exists.", quote=True)
         return
-    files = os.listdir(text)
+    files = os.listdir(text.lower())
     for file in files:
         if file.endswith(".jpg"):
             caption = f"Profile Picture of [@{text}](https://instagram.com/{text}) \n\nBy @StarkBots"
