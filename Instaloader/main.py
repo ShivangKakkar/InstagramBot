@@ -7,7 +7,7 @@ from pyrogram import Client, filters
 from .database.users_sql import get_info
 
 
-@Client.on_message(filters.private)
+@Client.on_message(filters.private & ~filters.regex(r'^/'))
 async def main(_, msg):
     if 'instagram.com' not in msg.text:
         return
