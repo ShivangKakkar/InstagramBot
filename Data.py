@@ -9,6 +9,8 @@ Hey {}
 Welcome to {}
 
 I can download profile pictures, videos, images and reels from instagram along with post caption.
+You can also authorize me to download private posts and stories
+
 Use below buttons to learn more.
 
 By @StarkBots
@@ -38,6 +40,9 @@ Send the link here to get the post contents including caption.
 Use the command `/profile_pic` or `/dp` along with instagram username to get its profile picture.
 Example : `/dp StarkProgrammer`
 
+3) **Private Posts and Stories**
+Authorize the bot to download private posts and stories. Use /auth
+
 **Note** : Stories and IGTV are not supported.
 """
 
@@ -47,7 +52,7 @@ Example : `/dp StarkProgrammer`
 
 A telegram bot to download instagram content by @StarkBots
 
-Source Code : Soon
+Source Code : [Click Here](https://github.com/StarkBotsIndustries/InstagramBot)
 
 Framework : [Pyrogram](docs.pyrogram.org)
 
@@ -55,5 +60,3 @@ Language : [Python](www.python.org)
 
 Developer : @StarkProgrammer
     """
-
-# [Click Here](https://github.com/StarkBotsIndustries/InstagramBot)
