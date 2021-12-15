@@ -35,12 +35,27 @@ async def set_info(user_id, username, password):
     SESSION.commit()
 
 
+async def delete_info(user_id):
+    q = SESSION.query(Users).get(user_id)
+    if q and q.insta_password:
+        q.insta_username = None
+        q.insta_password = None
+        SESSION.commit()
+        return True
+    else:
+        SESSION.close()
+        return False
+
+
 async def get_info(user_id):
     q: Users = SESSION.query(Users).get(user_id)
-    if q and q.insta_password:
-        info = q.insta_username, q.insta_password
-        SESSION.close()
-        return info
+    if q:
+        if q.insta_password:
+            info = q.insta_username, q.insta_password
+            SESSION.close()
+            return info
+        else:
+            return None, None
     else:
         SESSION.add(Users(user_id))
         SESSION.commit()

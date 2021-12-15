@@ -54,14 +54,16 @@ Telegram bot to download instagram content.
 
 1) Download images and videos.
 2) Download reels.
-3) Download profile pictures (public and private).
+3) Download profile pictures.
 4) Download multiple media of a single post.
 5) Get the original caption along with media.
+6) Authorize to download private posts.
+7) Unauthorize when needed.
 
 ## To-Do
 
 > That's on you mainly...
-Private instagram posts using password.
+Stories and Profiles
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 

@@ -7,14 +7,16 @@ from pyrogram import Client, filters
 from .database.users_sql import get_info
 
 
-@Client.on_message(filters.private & ~filters.command(["start", "help", "profile_pic", "about", "dp", "stats", "auth"]))
+@Client.on_message(filters.private)
 async def main(_, msg):
+    if 'instagram.com' not in msg.text:
+        return
     status = await msg.reply('Please Wait...', quote=True)
     pattern = re.compile(r'^(https?:[/][/])?(www\.)?instagram.com[/](p|reel)[/]([A-Za-z0-9-_]+)')
     try:
         matches = pattern.search(msg.text)
         post_id = matches.group(4)
-        username, password = await get_info(msg.user.id)
+        username, password = await get_info(msg.from_user.id)
         if not username:
             username = INSTA_USERNAME
             password = INSTA_PASSWORD

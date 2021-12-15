@@ -9,7 +9,7 @@ Hey {}
 Welcome to {}
 
 I can download profile pictures, videos, images and reels from instagram along with post caption.
-You can also authorize me to download private posts and stories
+You can also authorize me to download private posts.
 
 Use below buttons to learn more.
 
@@ -40,10 +40,12 @@ Send the link here to get the post contents including caption.
 Use the command `/profile_pic` or `/dp` along with instagram username to get its profile picture.
 Example : `/dp StarkProgrammer`
 
-3) **Private Posts and Stories**
-Authorize the bot to download private posts and stories. Use /auth
+3) **Private Posts**
+Authorize the bot to download private posts. Use /auth
 
 **Note** : Stories and IGTV are not supported.
+
+Use /auth to authorize and /unauth to unauthorize.
 """
 
     # About Message
