@@ -60,7 +60,7 @@ Framework : [Pyrogram](docs.pyrogram.org)
 
 Language : [Python](www.python.org)
 
-Credit : @StarkProgrammer
+Developer : @StarkProgrammer
 
 Noob Dev : @madhavanmi
 
