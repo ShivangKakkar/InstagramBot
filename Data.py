@@ -13,7 +13,7 @@ You can also authorize me to download private posts.
 
 Use below buttons to learn more.
 
-By @StarkBots
+By @Miuiprojects
     """
 
     # Home Button
@@ -28,7 +28,7 @@ By @StarkBots
             InlineKeyboardButton("How to Use ❔", callback_data="help"),
             InlineKeyboardButton("🎪 About 🎪", callback_data="about")
         ],
-        [InlineKeyboardButton("♥ More Amazing bots ♥", url="https://t.me/StarkBots")],
+        [InlineKeyboardButton("♥ More Amazing bots ♥", url="https://t.me/miuiprojects")],
     ]
 
     # Help Message
@@ -38,7 +38,7 @@ Send the link here to get the post contents including caption.
 
 2) **Profile Pictures**
 Use the command `/profile_pic` or `/dp` along with instagram username to get its profile picture.
-Example : `/dp StarkProgrammer`
+Example : `/dp miuiDev`
 
 3) **Private Posts**
 Authorize the bot to download private posts. Use /auth
@@ -52,13 +52,16 @@ Use /auth to authorize and /unauth to unauthorize.
     ABOUT = """
 **About This Bot** 
 
-A telegram bot to download instagram content by @StarkBots
+A telegram bot to download instagram content by @Miuiprojects
 
-Source Code : [Click Here](https://github.com/StarkBotsIndustries/InstagramBot)
+Source Code : [Click Here](https://github.com/KilobyteStrean/InstagramBot)
 
 Framework : [Pyrogram](docs.pyrogram.org)
 
 Language : [Python](www.python.org)
 
-Developer : @StarkProgrammer
+Credit : @StarkProgrammer
+
+Noob Dev : madhavan
+
     """
