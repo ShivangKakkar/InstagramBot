@@ -11,7 +11,7 @@ Welcome to {}
 I can download profile pictures, videos, images and reels from instagram along with post caption.
 You can also authorize me to download private posts.
 
-Use below buttons to learn more.
+ learn more Click buttons
 
 By @Miuiprojects
     """
@@ -23,12 +23,12 @@ By @Miuiprojects
 
     # Rest Buttons
     buttons = [
-        [InlineKeyboardButton("✨ Bot Status and More Bots ✨", url="https://t.me/StarkBots/7")],
+        [InlineKeyboardButton("✨ STATUS 🌺", url="https://t.me/Miuiprojects")],
         [
             InlineKeyboardButton("How to Use ❔", callback_data="help"),
-            InlineKeyboardButton("🎪 About 🎪", callback_data="about")
+            InlineKeyboardButton("🎪 About ", callback_data="about")
         ],
-        [InlineKeyboardButton("♥ More Amazing bots ♥", url="https://t.me/miuiprojects")],
+        [InlineKeyboardButton("More Amazing bots ♻️", url="https://t.me/miuiprojects")],
     ]
 
     # Help Message
@@ -62,6 +62,6 @@ Language : [Python](www.python.org)
 
 Credit : @StarkProgrammer
 
-Noob Dev : madhavan
+Noob Dev : @madhavanmi
 
     """
